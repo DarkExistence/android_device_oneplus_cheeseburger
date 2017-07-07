@@ -11,9 +11,9 @@
 # production of derivative works therefrom without the express permission of
 # the copyright owners is prohibited.
 #
-ifneq ($(USE_LEGACY_AUDIO_POLICY), 1)
-ifeq ($(USE_CUSTOM_AUDIO_POLICY), 1)
+
 LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := AudioPolicyManager.cpp
@@ -56,7 +56,7 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_PCM_OFFLOAD)),true)
 endif
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_PCM_OFFLOAD_24)),true)
-       LOCAL_CFLAGS += -DPCM_OFFLOAD_ENABLED_24
+    LOCAL_CFLAGS += -DPCM_OFFLOAD_ENABLED_24
 endif
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_EXTN_FORMATS)),true)
@@ -91,6 +91,3 @@ endif
 LOCAL_MODULE := libaudiopolicymanager
 
 include $(BUILD_SHARED_LIBRARY)
-
-endif
-endif
